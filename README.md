@@ -4,7 +4,12 @@
 import 'keep.js'
 
 var k = keep('https://hashsan.github.io/counter');
-var ary = k.list()
+var name = 'foo.txt'
+var text = await k.get(name)
+text = text +'\nnew line';
+await k.set(name,text)
+
+var ary = await k.list()
 /*
 [
 {
